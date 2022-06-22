@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const params = {
     useNewUrlParser: true,
 };
+app.use(cors());
 
 mongoose
     .connect(process.env.DB , params)
@@ -38,5 +39,3 @@ const port = process.env.PORT || 3000;
 app.listen(port , ()=>{
     console.log(`sever is running on ${port}`);
 });
-
-app.use(cors());
