@@ -17,4 +17,13 @@ router.post('/' ,async (req, res)=>{
     }
 });
 
+router.get('/hello' ,async (req, res)=>{
+    try {
+        res.json("hello user");
+    }catch(e){
+        res.json(e);
+    }
+});
+
+
 module.exports = router;
