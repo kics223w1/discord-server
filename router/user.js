@@ -9,13 +9,16 @@ router.post('/' ,async (req, res)=>{
         password: req.body.password,
         username: req.body.username,
     });
+    res.json(user);
     try {
         const saveUser = await user.save();
-        res.json(saveUser);
+        // res.json(saveUser);
     }catch(e){
         res.json(e);
     }
 });
+
+
 
 router.get('/hello' ,async (req, res)=>{
     try {
