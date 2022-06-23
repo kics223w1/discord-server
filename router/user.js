@@ -9,10 +9,9 @@ router.post('/' ,async (req, res)=>{
         password: req.body.password,
         username: req.body.username,
     });
-    res.json(user);
     try {
         const saveUser = await user.save();
-        // res.json(saveUser);
+        res.json(saveUser);
     }catch(e){
         res.json(e);
     }
@@ -20,9 +19,26 @@ router.post('/' ,async (req, res)=>{
 
 
 
-router.get('/hello' ,async (req, res)=>{
+router.get('/login' ,async (req, res)=>{
+    const user = new User({
+        account: req.body.account,
+        password: req.body.password,
+    });
     try {
-        res.json("hello user");
+        const check = await User.findOne({account: req.body.account, password: req.body.password});
+        res.json(check);
+    }catch(e){
+        res.json(e);
+    }
+});
+
+router.get('/checkaccount' ,async (req, res)=>{
+    const user = new User({
+        account: req.body.account,
+    });
+    try {
+        const check = await User.findOne({account: req.body.account});
+        res.json(check);
     }catch(e){
         res.json(e);
     }
