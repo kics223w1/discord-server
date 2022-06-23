@@ -20,12 +20,8 @@ router.post('/' ,async (req, res)=>{
 
 
 router.get('/login' ,async (req, res)=>{
-    const user = new User({
-        account: req.body.account,
-        password: req.body.password,
-    });
     try {
-        const check = await User.findOne({account: req.body.account, password: req.body.password});
+        const check = await User.findOne({account: req.params.account, password: req.params.password,});
         res.json(check);
     }catch(e){
         res.json(e);
@@ -33,9 +29,6 @@ router.get('/login' ,async (req, res)=>{
 });
 
 router.get('/checkaccount' ,async (req, res)=>{
-    const user = new User({
-        account: req.body.account,
-    });
     try {
         const check = await User.findOne({account: req.body.account});
         res.json(check);
