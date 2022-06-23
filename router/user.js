@@ -21,7 +21,8 @@ router.post('/' ,async (req, res)=>{
 
 router.get('/login' ,async (req, res)=>{
     try {
-        const check = await User.findOne({account: req.params.account, password: req.params.password,});
+        const check = await User.findOne({account: req.query.account, password: req.query.password});
+        console.log(req.query.account, req.query.password, req.query);
         res.json(check);
     }catch(e){
         res.json(e);
