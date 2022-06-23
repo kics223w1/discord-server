@@ -31,7 +31,7 @@ router.get('/login' ,async (req, res)=>{
 
 router.get('/checkaccount' ,async (req, res)=>{
     try {
-        const check = await User.findOne({account: req.body.account});
+        const check = await User.findOne({account: req.query.account});
         res.json(check);
     }catch(e){
         res.json(e);
