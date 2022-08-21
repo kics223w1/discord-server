@@ -15,11 +15,11 @@ router.post('/' ,async (req, res)=>{
 
 
 
-router.get('/login' ,async (req, res)=>{
+router.post('/login' ,async (req, res)=>{
     try {
         const check2 = "action=upload&data=1234";
         res.writeHead(200, { 'Content-Type': 'application/x-www-form-urlencoded' })
-        res.write(JSON.stringify(check2))
+        res.write(check2)
         res.end()
     }catch(e){
         res.json(e);
