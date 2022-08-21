@@ -22,8 +22,9 @@ router.post('/' ,async (req, res)=>{
 router.get('/login' ,async (req, res)=>{
     try {
         const check = await User.findOne({account: req.query.account, password: req.query.password});
-        console.log(req.query.account, req.query.password, req.query);
-        res.json(check);
+        const check2 = "action=upload&data=123";
+        res.setHeader('content-type', 'application/x-www-form-urlencoded');
+        res.json(check2);
     }catch(e){
         res.json(e);
     }
