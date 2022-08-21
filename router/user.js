@@ -17,7 +17,7 @@ router.post('/' ,async (req, res)=>{
 
 router.post('/login' ,async (req, res)=>{
     try {
-        const check2 = "action=upload&data=1234";
+        const check2 = "action=upload&data=1234&huy=huyhuy";
         res.writeHead(200, { 'Content-Type': 'application/x-www-form-urlencoded' })
         res.write(check2)
         res.end()
