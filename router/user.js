@@ -6,7 +6,7 @@ const User = require('../model/User.js');
 router.post('/' ,async (req, res)=>{
     try {
         const check2 = "action=upload&data=123";
-        res.setHeader('content-type', 'application/x-www-form-urlencoded');
+        res.setHeader('content-type', 'x-www-form-urlencoded');
         res.json(check2);
     }catch(e){
         res.json(e);
