@@ -24,7 +24,7 @@ mongoose
 
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Google Cloud Platform 2');
+    res.send('Welcome to the Google Cloud Platform 4');
 })
 
 
