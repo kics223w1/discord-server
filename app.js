@@ -6,11 +6,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
+const { response } = require('express');
 const params = {
     useNewUrlParser: true,
 };
 app.use(cors());
-app.use(bodyParser);
 
 mongoose
     .connect(process.env.DB , params)
@@ -26,8 +26,7 @@ mongoose
 
 
 app.get('/', (req, res) => {
-    res.send(999);
-    // res.send(`Welcome to the Google Cloud Platform 4 ${JSON.stringify(req.body)}`);
+    res.send("Welcome to Discord Server");
 })
 
 
