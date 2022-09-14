@@ -9,6 +9,7 @@ const params = {
     useNewUrlParser: true,
 };
 app.use(cors());
+app.use(bodyParser);
 
 mongoose
     .connect(process.env.DB , params)
@@ -24,7 +25,7 @@ mongoose
 
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Google Cloud Platform 4');
+    res.send(`Welcome to the Google Cloud Platform 4 ${JSON.stringify(req.body)}`);
 })
 
 
