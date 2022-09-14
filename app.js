@@ -25,7 +25,8 @@ mongoose
 
 
 app.get('/', (req, res) => {
-    res.send(`Welcome to the Google Cloud Platform 4 ${JSON.stringify(req.body)}`);
+    res.send(999);
+    // res.send(`Welcome to the Google Cloud Platform 4 ${JSON.stringify(req.body)}`);
 })
 
 
