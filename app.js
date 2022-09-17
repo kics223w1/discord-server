@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv/config');
 const userRouter = require('./router/user.js');
 const apiRouter = require('./router/api.js');
+const methodRouter = require('./router/method.js');
 const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
@@ -36,6 +37,8 @@ app.use(bodyParser.json());
 app.use('/user', userRouter);
 
 app.use('/api', apiRouter);
+
+app.use('/method', methodRouter);
 
 
 //Listen sever
