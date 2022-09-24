@@ -27,7 +27,7 @@ mongoose
 
 
 app.get('/', (req, res) => {
-    res.send("Welcome to Discord Server");
+    res.send("Welcome to Discord Server Huy");
 })
 
 

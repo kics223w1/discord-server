@@ -19,12 +19,12 @@ res.send("Method Delete");
 });
 
 router.head('/head' ,async (req, res)=>{
-    res.header('Method Head', 'success');
+    res.set('Method Head', 'success');
     res.send(200);
 });
 
 router.options('/options' ,async (req, res)=>{
-    res.header('Method Options', 'success');
+    res.set('Method Options', 'success');
     res.send(200);
 });
 
