@@ -18,6 +18,18 @@ router.post('/statusCode' ,async (req, res)=>{
     }
 });
 
+router.post('/contentType' ,async (req, res)=>{
+    try {
+        const contype = req.headers['content-type'];
+        const check2 = "huyhuy123456789";
+        res.writeHead(200, { 'Content-Type': `${contype}` })
+        res.write(check2)
+        res.end()
+    }catch(e){
+        res.json(e);
+    }
+});
+
 
 
 
