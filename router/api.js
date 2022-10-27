@@ -30,6 +30,14 @@ router.post('/contentType' ,async (req, res)=>{
     }
 });
 
+router.post('/sameBody' ,async (req, res)=>{
+    try {
+        res.send(req.body);
+    }catch(e){
+        res.json(e);
+    }
+});
+
 
 
 
