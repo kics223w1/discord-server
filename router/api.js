@@ -20,6 +20,7 @@ router.post('/statusCode' ,async (req, res)=>{
 
 router.post('/contentType' ,async (req, res)=>{
     try {
+      // ok
         const contype = req.headers['content-type'];
         const check2 = "huyhuy123456789";
         res.writeHead(200, { 'Content-Type': `${contype}` })
