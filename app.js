@@ -11,7 +11,9 @@ const { response } = require('express');
 const params = {
     useNewUrlParser: true,
 };
+const timeout = require('connect-timeout');
 app.use(cors());
+app.use(timeout('2s'));
 
 mongoose
     .connect(process.env.DB , params)
@@ -43,6 +45,7 @@ app.use('/method', methodRouter);
 
 //Listen sever
 const port = process.env.PORT || 5000;
-app.listen(port , ()=>{
+const server = app.listen(port , ()=>{
     console.log(`sever is running on ${port}`);
 });
+
