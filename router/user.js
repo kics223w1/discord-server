@@ -33,10 +33,8 @@ router.post("/login", async (req, res) => {
 
 router.get("/checkaccount", async (req, res) => {
   try {
-    console.log("request went to server ", id);
-    id += 1;
-    const check = await User.findOne({ account: req.query.account });
-    res.json(check);
+    const timestamp = Date.now();
+    res.status(204).send();
   } catch (e) {
     res.json(e);
   }
